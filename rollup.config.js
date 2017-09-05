@@ -24,7 +24,7 @@ export default {
         'react'
       ],
       plugins: [
-        'external-helpers'
+        'external-helpers',
       ]
     }),
     uglify()

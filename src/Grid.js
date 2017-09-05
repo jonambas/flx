@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+// import PropTypes from 'prop-types';
+// import classnames from 'classnames';
 
 import Column from './Column';
 // import styles from './Grid.module.scss';
+const SIZE_TYPE = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-class Grid extends Component {
+type Props = {
+  children?: Array<React.Element<>>,
+  center?: SIZE_TYPE,
+  start?: SIZE_TYPE,
+  end?: SIZE_TYPE,
+  top?: SIZE_TYPE,
+  middle?: SIZE_TYPE,
+  bottom?: SIZE_TYPE,
+  around?: SIZE_TYPE,
+  between?: SIZE_TYPE,
+}
+
+class Grid extends Component<Props> {
   static Column = Column;
-
-  static propTypes = {
-    center:  PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    start:   PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    end:     PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    top:     PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    middle:  PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    bottom:  PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    around:  PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    between: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node
-    ])
-  };
 
   render() {
     const {
